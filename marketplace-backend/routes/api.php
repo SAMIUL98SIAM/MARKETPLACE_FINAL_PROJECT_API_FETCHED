@@ -46,7 +46,7 @@ Route::delete('/deleteProject/{id}','ProjectController@delete');
 
 /*Bids Part*/
 Route::get('/bidList','BidController@list');
-Route::get('/bidList_details/{id}','BidController@bid_details');
+Route::get('/bidList_details/{id}','BidController@list_details');
 Route::get('/download/{file}','BidController@download');
 /* Bidder*/
 Route::get('/seller_bidingproject', 'BidController@seller_bidingproject');

@@ -17,10 +17,24 @@ class BidController extends Controller
 {
     function list()
     {
-        $list = Buyer::get();
-        return response()->json($list, 200);
+        $bids = Buyer::all();
+        return response()->json(
+            [
+                'status'=>200,
+                'bids'=> $bids,
+            ]
+            );
     }
-
+    public function list_details($id)
+    {
+        $bid = Buyer::find($id);
+        return response()->json(
+            [
+                'status'=>200,
+                'bid'=> $bid,
+            ]
+        );
+    }
     function bid_details($id)
     {     
         $bid = Buyer::find($id);

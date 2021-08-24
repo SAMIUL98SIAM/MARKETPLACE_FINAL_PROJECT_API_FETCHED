@@ -6,7 +6,9 @@ import PostContestList from "./components/Contest/PostContestList";
 import EditPostContest from "./components/EditPostContest";
 import { contests } from "./ContestList";
 
+// import BidList from "./components/Bid/BidList";
 import BidList from "./components/Bid/BidList";
+import BidListDetails from "./components/Bid/BidListDetails";
 import { bids } from "./BidList";
 
 import AddProject from "./components/Project/AddProject";
@@ -16,6 +18,7 @@ import EditProject from "./components/Project/EditProject";
 import { projects } from "./ProjectList";
 
 import BidderList from "./components/Bid/BidderList";
+// import BidListDetails from "./components/Bid/BidListDetails";
 import { bidders } from "./BidderList";
 
 import MessageSeller from "./components/MessageSeller";
@@ -92,12 +95,6 @@ function App() {
     return (
         <Router>
             <Switch>
-                {/* <Route path="/contestList">
-                    <Navbar />
-                    <div>
-                        <PostContestList contests={contest} callback={deleteCon} />
-                    </div>
-                </Route> */}
                 <Route exact path="/">
                      <Navbar />
                     <h1>Welcome to online marketplace</h1>
@@ -124,19 +121,12 @@ function App() {
                             <BidList bids={bid} callback={deleteCon} />
                         </div>
                 </Route>
-                {/*Problem*/}
-                {/* <Route path="/bidList_details/:id">
-                    <Navbar/>
-                         <DetailsBid bid={bid}/>   
-                </Route> */}
-                {/*Problem*/}
+                <Route path="/bidList_details/:id" component={BidListDetails}/>
                 <Route path="/seller_bidingproject" >
                     <div>
                           <BidderList bidders={bidder} />
                     </div>
                 </Route>
-
-
                 <Route path="/projectList">
                      <Navbar/> 
                      <Project />
