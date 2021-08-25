@@ -8,7 +8,10 @@ import { contests } from "./ContestList";
 
 // import BidList from "./components/Bid/BidList";
 import BidList from "./components/Bid/BidList";
-import BidListDetails from "./components/Bid/BidListDetails";
+
+import BidderList from "./components/Bid/BidderList";
+
+import BidderListDetails from "./components/Bid/BidderListDetails";
 import { bids } from "./BidList";
 
 import AddProject from "./components/Project/AddProject";
@@ -17,7 +20,7 @@ import EditProject from "./components/Project/EditProject";
 
 import { projects } from "./ProjectList";
 
-import BidderList from "./components/Bid/BidderList";
+
 // import BidListDetails from "./components/Bid/BidListDetails";
 import { bidders } from "./BidderList";
 
@@ -121,12 +124,15 @@ function App() {
                             <BidList bids={bid} callback={deleteCon} />
                         </div>
                 </Route>
-                <Route path="/bidList_details/:id" component={BidListDetails}/>
-                <Route path="/seller_bidingproject" >
+                {/* <Route path="/bidList_details/:id" component={BidListDetails}/> */}
+
+                {/* <Route path="/seller_bidingproject" >
                     <div>
                           <BidderList bidders={bidder} />
                     </div>
-                </Route>
+                </Route> */}
+                <Route path="/seller_bidingproject" component={BidderList}/>
+                <Route path="/seller_bidingproject_details/:id" component={BidderListDetails}/>
                 <Route path="/projectList">
                      <Navbar/> 
                      <Project />

@@ -35,11 +35,6 @@ class BidController extends Controller
             ]
         );
     }
-    function bid_details($id)
-    {     
-        $bid = Buyer::find($id);
-        return response()->json($bid,200);
-    } 
     
     public function download(Request $req,$file)
     {
@@ -50,15 +45,30 @@ class BidController extends Controller
     public function seller_bidingproject()
     {
         $bidders = Bid::all();
-       // return view('buyer.seller_bidingproject')->with('bids',$bids);
-        return response()->json($bidders,200) ;
+        return response()->json(
+            [
+                'status'=>200,
+                'bidders'=> $bidders,
+            ]
+            );
     } 
+
+    public function seller_bidingproject_details($id)
+    {
+        $bidder = Bid::find($id);
+        return response()->json(
+            [
+                'status'=>200,
+                'bidder'=> $bidder,
+            ]
+        );
+    }
 
     //pore krtse
     public function seller_bidingprojectMsg($id)
     {
-      $bid = Bid::find($id);
-      return view('buyer.seller_bidingprojectMsg')->with('bid',$bid) ;
+    //   $bid = Bid::find($id);
+    //   return view('buyer.seller_bidingprojectMsg')->with('bid',$bid) ;
     } 
      
     

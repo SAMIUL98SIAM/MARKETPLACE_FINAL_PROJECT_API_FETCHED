@@ -50,7 +50,7 @@ Route::get('/bidList_details/{id}','BidController@list_details');
 Route::get('/download/{file}','BidController@download');
 /* Bidder*/
 Route::get('/seller_bidingproject', 'BidController@seller_bidingproject');
-
+Route::get('/seller_bidingproject_details/{id}', 'BidController@seller_bidingproject_details');
 Route::match(['get','post'], '/botman', [BotManController::class,"handle"]);
 /*Bidder*/
 /*Bids Part*/
