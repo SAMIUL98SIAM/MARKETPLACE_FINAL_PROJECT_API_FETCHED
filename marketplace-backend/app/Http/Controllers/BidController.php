@@ -67,10 +67,14 @@ class BidController extends Controller
     //pore krtse
     public function seller_bidingprojectMsg($id)
     {
-    //   $bid = Bid::find($id);
-    //   return view('buyer.seller_bidingprojectMsg')->with('bid',$bid) ;
-    } 
-     
+      $bidder = Bid::find($id);
+      return response()->json(
+        [
+            'status'=>200,
+            'bidder'=> $bidder,
+        ]
+    );
+    }
     
 
 
