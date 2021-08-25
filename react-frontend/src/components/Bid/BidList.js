@@ -43,10 +43,10 @@ class BidList extends Component
                     <td>{bid.project_file}</td>
                     <td>{bid.price}</td>
                     <td>
-                    <Link className="btn btn-success" to={`/bidList_details/${bid.id}`}>Details</Link>                  
+                        <Link className="btn btn-success" to={`/bidList_details/${bid.id}`}>Details</Link>                  
                     </td>
                     <td>
-                    <Link className="btn btn-success" to={`/editBlog/${bid.id}`}>Message</Link>
+                        <Link className="btn btn-primary" to={`/seller_bidingproject`}>Entry</Link>
                     </td>
                 </tr>
             )

@@ -46,10 +46,10 @@ class BidderList extends Component
                     <td>{bidder.username}</td>
                     <td>{bidder.description}</td>
                     <td>
-                    <Link className="btn btn-success" to={`/seller_bidingproject/${bidder.id}`}>Details</Link>                  
+                    <Link className="btn btn-success" to={`/seller_bidingproject_details/${bidder.id}`}>Details</Link>                  
                     </td>
                     <td>
-                    <Link className="btn btn-primary" to={`/`}>Message</Link>
+                    <Link className="btn btn-primary" to={`/seller_bidingproject_Message/${bidder.id}`}>Message</Link>
                     </td>
                 </tr>
             )
@@ -65,54 +65,19 @@ class BidderList extends Component
                 <thead>
                     <tr>
                     <th scope="col">Id</th>
+                    <th scope="col">Buyer Id</th>
                     <th scope="col">Username</th>
-                    
+                    <th scope="col">Description</th>
                     <th scope="col">Communication</th>
                     </tr>
                 </thead>
                 <tbody>
                    {bidder_HTML_TABLE}
-                    {/* <tr>
-                    <td>{buyer_id}</td>
-                    <td>{username}</td>
-                    
-                    <td><a class="btn btn-primary" href="/">Message</a>
-                        <a class="btn btn-danger" href="/">Details</a>    
-                    </td>
-                    </tr>   */}
+                   
                 </tbody>
                 </table>
         </div>
 
-
-                {/* <div className="row">
-                     <div className="col-md-12">
-                         <div className="card">
-                             <div className="card-header">
-                                    <h4> 
-                                      Bid List
-                                    </h4>
-                            </div>
-                            <div className="card-body">
-                                <table className="table table-bordered table-striped">
-                                    <thead>
-                                       <tr>
-                                           <th>Id</th>
-                                           <th>Title</th>
-                                           <th>Project File</th>
-                                           <th>Price</th>
-                                           <th>Edit</th>
-                                           <th>Delete</th>
-                                       </tr>
-                                    </thead>
-                                    <tbody>
-                                        {bid_HTML_TABLE}
-                                    </tbody>
-                                </table>
-                            </div>
-                     </div>
-                 </div>
-            </div> */}
     </div>
 
     )
@@ -120,27 +85,3 @@ class BidderList extends Component
  }
  export default BidderList;
 
-
-
-// import Bidder from "./Bidder";
-
-
-
-// const BidderList = ({ bidders }) => {
-//     return (
-//         <div>
-//             <h1 style={{textAlign:"center"}}> Seller Who bid these project</h1>
-//             {bidders.map((bidder) => {
-//                 return (
-//                     <Bidder
-//                         key={bidder.id}
-//                         {...bidder}
-//                         // deletecallback={callback}
-//                     />
-//                 );
-//             })}
-//         </div>
-//     );
-// };
-
-// export default BidderList;

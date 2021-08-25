@@ -6,14 +6,13 @@ import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import swal from 'sweetalert';
 
+
 class BidderListDetails extends Component
 {
  		state = {
             buyer_id:'',
             username:'',
             description:'',
-            error_list:[],
-        	// description: '',
        }
 
     handleInput = (e)=>{
@@ -32,7 +31,7 @@ class BidderListDetails extends Component
         {
             this.setState({
 
-                username:res.data.bidder.title,
+                username:res.data.bidder.username,
                 description:res.data.bidder.description,
                 buyer_id:res.data.bidder.buyer_id,
             });
